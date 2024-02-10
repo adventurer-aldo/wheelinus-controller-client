@@ -1,0 +1,258 @@
+[gd_scene load_steps=32 format=3 uid="uid://b3jfjqwyolcv1"]
+
+[ext_resource type="Script" path="res://Controller.gd" id="1_4xxhj"]
+[ext_resource type="Texture2D" uid="uid://b5i7db8b3t5ey" path="res://shadedDark/shadedDark36.png" id="2_m7g5b"]
+[ext_resource type="Texture2D" uid="uid://chnlda1tvyc5j" path="res://shadedLight/shadedLight36.png" id="3_7iwuh"]
+[ext_resource type="Texture2D" uid="uid://v453c7tqfr2o" path="res://shadedDark/shadedDark37.png" id="3_u3xao"]
+[ext_resource type="Texture2D" uid="uid://cyje76edyhxsr" path="res://shadedDark/shadedDark38.png" id="4_r2ggd"]
+[ext_resource type="Texture2D" uid="uid://dmreji4j8kesn" path="res://shadedLight/shadedLight37.png" id="5_4uljx"]
+[ext_resource type="Texture2D" uid="uid://5sj0a0adgls2" path="res://shadedDark/shadedDark39.png" id="5_qgy7f"]
+[ext_resource type="Texture2D" uid="uid://cm6vo0145tk8o" path="res://shadedDark/shadedDark04.png" id="6_5kiej"]
+[ext_resource type="Texture2D" uid="uid://bt7glc6qg6uvc" path="res://shadedDark/shadedDark05.png" id="7_8j6s3"]
+[ext_resource type="Texture2D" uid="uid://cx4c112tgmum8" path="res://shadedLight/shadedLight38.png" id="7_ejlq6"]
+[ext_resource type="Texture2D" uid="uid://bg0pv2enb30v3" path="res://shadedDark/shadedDark42.png" id="8_ykws3"]
+[ext_resource type="Texture2D" uid="uid://dj4bg5cao4bfp" path="res://shadedLight/shadedLight39.png" id="9_iqjyh"]
+[ext_resource type="Texture2D" uid="uid://4udw13rq6hsl" path="res://shadedDark/shadedDark43.png" id="9_ptuv4"]
+[ext_resource type="Texture2D" uid="uid://mx452el4acri" path="res://shadedDark/shadedDark40.png" id="10_3gqpa"]
+[ext_resource type="Texture2D" uid="uid://ce0tbgwcwryq6" path="res://shadedDark/shadedDark41.png" id="11_5nrup"]
+[ext_resource type="Texture2D" uid="uid://c1y7epc6j0wha" path="res://shadedLight/shadedLight05.png" id="12_birhh"]
+[ext_resource type="Texture2D" uid="uid://br3t1crkb6pxa" path="res://shadedLight/shadedLight42.png" id="14_kf0gg"]
+[ext_resource type="Texture2D" uid="uid://cyi2oy3m46t40" path="res://shadedLight/shadedLight43.png" id="16_awkqm"]
+[ext_resource type="Texture2D" uid="uid://bngfsxvwrblde" path="res://shadedLight/shadedLight40.png" id="18_1uen5"]
+[ext_resource type="Texture2D" uid="uid://dymmrl4e2fjof" path="res://shadedLight/shadedLight41.png" id="20_4vhxm"]
+[ext_resource type="Texture2D" uid="uid://bbs2c3k4ituj1" path="res://shadedDark/shadedDark11.png" id="22_2mylx"]
+[ext_resource type="Texture2D" uid="uid://odxvhcn2xwlb" path="res://shadedDark/shadedDark01.png" id="23_m7ebu"]
+[ext_resource type="PackedScene" uid="uid://dbk7s27cj18kd" path="res://yes.tscn" id="24_bjqva"]
+[ext_resource type="Texture2D" uid="uid://beqs1j8q4pgss" path="res://shadedLight/shadedLight01.png" id="24_c44jw"]
+[ext_resource type="Texture2D" uid="uid://cb5g1w7t4qg0u" path="res://wheel.png" id="25_f1203"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_usvwt"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_pymfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xjh6"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sihkm"]
+bg_color = Color(0, 0.317647, 0.733333, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4u1b"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvcq5"]
+bg_color = Color(0, 0.317647, 0.733333, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[node name="Controller" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+script = ExtResource("1_4xxhj")
+
+[node name="MainButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1216.0
+offset_top = 320.0
+offset_right = 1536.0
+offset_bottom = 640.0
+metadata/_edit_group_ = true
+
+[node name="A" type="TouchScreenButton" parent="MainButtons"]
+position = Vector2(106.066, 212.132)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("2_m7g5b")
+texture_pressed = ExtResource("3_7iwuh")
+
+[node name="B" type="TouchScreenButton" parent="MainButtons"]
+position = Vector2(212.132, 106.066)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_u3xao")
+texture_pressed = ExtResource("5_4uljx")
+
+[node name="X" type="TouchScreenButton" parent="MainButtons"]
+position = Vector2(0, 106.066)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("4_r2ggd")
+texture_pressed = ExtResource("7_ejlq6")
+
+[node name="Y" type="TouchScreenButton" parent="MainButtons"]
+position = Vector2(106.066, 0)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("5_qgy7f")
+texture_pressed = ExtResource("9_iqjyh")
+
+[node name="DPad" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 328.0
+offset_right = 165.0
+offset_bottom = 455.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_5kiej")
+metadata/_edit_group_ = true
+
+[node name="Left" type="TouchScreenButton" parent="DPad"]
+position = Vector2(3.5, 44)
+scale = Vector2(0.625, 0.625)
+texture_normal = ExtResource("7_8j6s3")
+texture_pressed = ExtResource("12_birhh")
+
+[node name="Right" type="TouchScreenButton" parent="DPad"]
+position = Vector2(121.6, 82)
+rotation = 3.14159
+scale = Vector2(0.625, 0.625)
+texture_normal = ExtResource("7_8j6s3")
+texture_pressed = ExtResource("12_birhh")
+
+[node name="Up" type="TouchScreenButton" parent="DPad"]
+position = Vector2(82, 4)
+rotation = 1.57079
+scale = Vector2(0.625, 0.625)
+texture_normal = ExtResource("7_8j6s3")
+texture_pressed = ExtResource("12_birhh")
+
+[node name="Down" type="TouchScreenButton" parent="DPad"]
+position = Vector2(44.4, 120)
+rotation = -1.5708
+scale = Vector2(0.625, 0.625)
+texture_normal = ExtResource("7_8j6s3")
+texture_pressed = ExtResource("12_birhh")
+
+[node name="Start" type="TouchScreenButton" parent="."]
+position = Vector2(803, 256)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("8_ykws3")
+texture_pressed = ExtResource("14_kf0gg")
+
+[node name="Select" type="TouchScreenButton" parent="."]
+position = Vector2(576, 256)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("9_ptuv4")
+texture_pressed = ExtResource("16_awkqm")
+
+[node name="LBumper" type="TouchScreenButton" parent="."]
+position = Vector2(128, 128)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("10_3gqpa")
+texture_pressed = ExtResource("18_1uen5")
+
+[node name="RBumper" type="TouchScreenButton" parent="."]
+position = Vector2(1360, 128)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("11_5nrup")
+texture_pressed = ExtResource("20_4vhxm")
+
+[node name="LStick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 392.0
+offset_right = 765.333
+offset_bottom = 645.333
+texture = ExtResource("22_2mylx")
+metadata/_edit_group_ = true
+
+[node name="LStickButton" type="TouchScreenButton" parent="LStick"]
+position = Vector2(54.6665, 51.6665)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("23_m7ebu")
+texture_pressed = ExtResource("24_c44jw")
+
+[node name="RStick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 392.0
+offset_right = 1021.33
+offset_bottom = 645.333
+texture = ExtResource("22_2mylx")
+metadata/_edit_group_ = true
+
+[node name="RStickButton" type="TouchScreenButton" parent="RStick"]
+position = Vector2(54.6665, 51.6665)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("23_m7ebu")
+texture_pressed = ExtResource("24_c44jw")
+
+[node name="Accelerator" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 704.0
+offset_right = 1280.0
+offset_bottom = 1392.0
+rotation = 3.14159
+theme_override_icons/grabber = SubResource("ImageTexture_usvwt")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_pymfq")
+theme_override_styles/slider = SubResource("StyleBoxFlat_2xjh6")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_sihkm")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_sihkm")
+min_value = 16383.0
+max_value = 32767.0
+value = 16383.0
+rounded = true
+
+[node name="Brake" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 704.0
+offset_right = 624.0
+offset_bottom = 1392.0
+rotation = 3.14159
+theme_override_icons/grabber = SubResource("ImageTexture_pymfq")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_pymfq")
+theme_override_styles/slider = SubResource("StyleBoxFlat_k4u1b")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gvcq5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_sihkm")
+min_value = -16383.0
+max_value = 0.0
+value = -16383.0
+rounded = true
+scrollable = false
+
+[node name="VJoy" parent="." instance=ExtResource("24_bjqva")]
+
+[node name="Wheel" type="Sprite2D" parent="."]
+position = Vector2(768, 152)
+scale = Vector2(0.672, 0.672)
+texture = ExtResource("25_f1203")
+
+[connection signal="pressed" from="MainButtons/A" to="." method="_on_a_button_down"]
+[connection signal="released" from="MainButtons/A" to="." method="_on_a_button_up"]
+[connection signal="pressed" from="MainButtons/B" to="." method="_on_b_button_down"]
+[connection signal="released" from="MainButtons/B" to="." method="_on_b_button_up"]
+[connection signal="pressed" from="MainButtons/X" to="." method="_on_x_button_down"]
+[connection signal="released" from="MainButtons/X" to="." method="_on_x_button_up"]
+[connection signal="pressed" from="MainButtons/Y" to="." method="_on_y_button_down"]
+[connection signal="released" from="MainButtons/Y" to="." method="_on_y_button_up"]
+[connection signal="pressed" from="DPad/Left" to="." method="_on_left_button_down"]
+[connection signal="released" from="DPad/Left" to="." method="_on_left_button_up"]
+[connection signal="pressed" from="DPad/Right" to="." method="_on_right_button_down"]
+[connection signal="released" from="DPad/Right" to="." method="_on_right_button_up"]
+[connection signal="pressed" from="DPad/Up" to="." method="_on_up_button_down"]
+[connection signal="released" from="DPad/Up" to="." method="_on_up_button_up"]
+[connection signal="pressed" from="DPad/Down" to="." method="_on_down_button_down"]
+[connection signal="released" from="DPad/Down" to="." method="_on_down_button_up"]
+[connection signal="pressed" from="Start" to="." method="_on_start_button_down"]
+[connection signal="released" from="Start" to="." method="_on_start_button_up"]
+[connection signal="pressed" from="Select" to="." method="_on_select_button_down"]
+[connection signal="released" from="Select" to="." method="_on_select_button_up"]
+[connection signal="pressed" from="LBumper" to="." method="_on_l_bumper_button_down"]
+[connection signal="released" from="LBumper" to="." method="_on_l_bumper_button_up"]
+[connection signal="pressed" from="RBumper" to="." method="_on_r_bumper_button_down"]
+[connection signal="released" from="RBumper" to="." method="_on_r_bumper_button_up"]
+[connection signal="pressed" from="LStick/LStickButton" to="." method="_on_l_stick_button_button_down"]
+[connection signal="released" from="LStick/LStickButton" to="." method="_on_l_stick_button_button_up"]
+[connection signal="pressed" from="RStick/RStickButton" to="." method="_on_r_stick_button_button_down"]
+[connection signal="released" from="RStick/RStickButton" to="." method="_on_r_stick_button_button_up"]
+[connection signal="drag_ended" from="Accelerator" to="." method="_on_accelerator_drag_ended"]
+[connection signal="value_changed" from="Accelerator" to="." method="_on_accelerator_value_changed"]
+[connection signal="drag_ended" from="Brake" to="." method="_on_brake_drag_ended"]
+[connection signal="value_changed" from="Brake" to="." method="_on_brake_value_changed"]

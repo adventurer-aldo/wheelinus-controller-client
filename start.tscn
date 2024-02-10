@@ -1,0 +1,151 @@
+[gd_scene load_steps=9 format=3 uid="uid://dulbrwm630eq"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_tlkmx"]
+[ext_resource type="Texture2D" uid="uid://bp7mf83j7uunq" path="res://shadedDark/shadedDark16.png" id="1_xna76"]
+[ext_resource type="Texture2D" uid="uid://6pwa1dyl5c68" path="res://shadedLight/shadedLight16.png" id="2_vy61v"]
+[ext_resource type="Texture2D" uid="uid://dc5j0qcalkiuw" path="res://shadedDark/shadedDark32.png" id="4_p5n1n"]
+[ext_resource type="Texture2D" uid="uid://103eqtqut15j" path="res://shadedLight/shadedLight32.png" id="5_qf0jm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33fmq"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y8na"]
+bg_color = Color(0, 0.317647, 0.733333, 1)
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f28rg"]
+bg_color = Color(0, 0.317647, 0.733333, 1)
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
+
+[node name="Control" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+script = ExtResource("1_tlkmx")
+
+[node name="Server" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 144.0
+offset_right = 1176.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Endereço do servidor"
+
+[node name="Continue" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -64.0
+offset_right = 72.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.25, 3.25)
+texture_normal = ExtResource("1_xna76")
+texture_pressed = ExtResource("2_vy61v")
+
+[node name="Search" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -64.0
+offset_right = -104.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.25, 3.25)
+texture_normal = ExtResource("4_p5n1n")
+texture_pressed = ExtResource("5_qf0jm")
+
+[node name="AccelerometerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.5
+offset_top = 128.0
+offset_right = 373.5
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 61
+text = "Accelerometer Sensitivity"
+horizontal_alignment = 1
+
+[node name="AutoFindLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.5
+offset_top = -320.0
+offset_right = 373.5
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 61
+text = "Found a working server in Network!"
+horizontal_alignment = 1
+
+[node name="QuickConnect" type="HTTPRequest" parent="."]
+timeout = 0.5
+
+[node name="Sense" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -667.0
+offset_top = 200.0
+offset_right = 667.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_33fmq")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6y8na")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_f28rg")
+min_value = 0.1
+max_value = 20.0
+step = 0.01
+value = 10.0
+scrollable = false
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.165
+anchor_bottom = 0.456
+offset_left = 1232.0
+offset_top = 120.0
+offset_right = 1248.0
+offset_bottom = 119.68
+wrap_mode = 1
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Search" to="." method="_on_search_pressed"]
+[connection signal="request_completed" from="QuickConnect" to="." method="_on_quick_connect_request_completed"]
+[connection signal="value_changed" from="Sense" to="." method="_on_sense_value_changed"]
