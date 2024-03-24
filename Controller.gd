@@ -1,4 +1,5 @@
 extends ColorRect
+var p
 
 # Button 1 = Dpad Up
 # Button 2 = Dpad Left
@@ -14,6 +15,17 @@ extends ColorRect
 # Button 12 = RBumber
 # Button 13 = LStick Press
 # Button 14 = RStick Press
+
+func _ready():
+	var peer = ENetMultiplayerPeer.new()
+	if Global.mode == 'direct':
+		$IP.text = str(IP.get_local_addresses()[-1])
+		p = UDPServer.new()
+		p.listen(12345)
+	else:
+		peer.create_client(Global.server, 12345)
+		p = PacketPeerUDP.new()
+		p.bind(12345, Global.server)
 
 func _process(_delta):
 	var accel = Input.get_accelerometer()
@@ -115,3 +127,7 @@ func _on_brake_drag_ended(value_changed):
 
 func _on_brake_value_changed(value):
 	$VJoy.axis_y = value * -1
+
+
+func _on_v_joy_coord(coords):
+	p.put_var(coords)

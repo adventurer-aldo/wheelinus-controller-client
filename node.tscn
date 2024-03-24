@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7kfpn83cj88"]
+[gd_scene load_steps=3 format=3 uid="uid://dg7kfpn83cj88"]
 
 [ext_resource type="Script" path="res://Node.gd" id="1_v76ot"]
+[ext_resource type="Texture2D" uid="uid://6mpwu4canvqn" path="res://shadedLight/shadedLight09.png" id="2_d4cwc"]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node2D"]
 script = ExtResource("1_v76ot")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(277, 153)
+texture_normal = ExtResource("2_d4cwc")
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]

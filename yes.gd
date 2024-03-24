@@ -1,5 +1,7 @@
 extends Node
 
+signal coord(coords)
+
 var axis_x = 32767/2
 var axis_y = 32767/2
 var axis_z = 32767/2
@@ -21,33 +23,53 @@ var button_12 = false
 var button_13 = false
 var button_14 = false
 
-var server_address = "http://localhost:12345"
-
 func _process(_delta):
 	send_input()
 
-# Called when the node enters the scene tree for the first time.
 func send_input():
-	# Replace with your server's IP and port
-	$HTTPRequest.request(Global.server, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify({
-		'axis_x': axis_x,
-		'axis_y': axis_y,
-		'axis_z': axis_z,
-		'axis_rx': axis_rx,
-		'axis_ry': axis_ry,
-		'axis_rz': axis_rz,
-		'button_1': button_1,
-		'button_2': button_2,
-		'button_3': button_3,
-		'button_4': button_4,
-		'button_5': button_5,
-		'button_6': button_6,
-		'button_7': button_7,
-		'button_8': button_8,
-		'button_9': button_9,
-		'button_10': button_10,
-		'button_11': button_11,
-		'button_12': button_12,
-		'button_13': button_13,
-		'button_14': button_14
-	}))
+	if Global.mode == 'direct':
+		$HTTPRequest.request(Global.server, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify({
+			'axis_x': axis_x,
+			'axis_y': axis_y,
+			'axis_z': axis_z,
+			'axis_rx': axis_rx,
+			'axis_ry': axis_ry,
+			'axis_rz': axis_rz,
+			'button_1': button_1,
+			'button_2': button_2,
+			'button_3': button_3,
+			'button_4': button_4,
+			'button_5': button_5,
+			'button_6': button_6,
+			'button_7': button_7,
+			'button_8': button_8,
+			'button_9': button_9,
+			'button_10': button_10,
+			'button_11': button_11,
+			'button_12': button_12,
+			'button_13': button_13,
+			'button_14': button_14
+		}))
+	else:
+		emit_signal("coord", {
+			'axis_x': axis_x,
+			'axis_y': axis_y,
+			'axis_z': axis_z,
+			'axis_rx': axis_rx,
+			'axis_ry': axis_ry,
+			'axis_rz': axis_rz,
+			'button_1': button_1,
+			'button_2': button_2,
+			'button_3': button_3,
+			'button_4': button_4,
+			'button_5': button_5,
+			'button_6': button_6,
+			'button_7': button_7,
+			'button_8': button_8,
+			'button_9': button_9,
+			'button_10': button_10,
+			'button_11': button_11,
+			'button_12': button_12,
+			'button_13': button_13,
+			'button_14': button_14
+		})

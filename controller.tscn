@@ -224,6 +224,13 @@ position = Vector2(768, 152)
 scale = Vector2(0.672, 0.672)
 texture = ExtResource("25_f1203")
 
+[node name="IP" type="Label" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 12
+text = "192.168.xx.yyy"
+
 [connection signal="pressed" from="MainButtons/A" to="." method="_on_a_button_down"]
 [connection signal="released" from="MainButtons/A" to="." method="_on_a_button_up"]
 [connection signal="pressed" from="MainButtons/B" to="." method="_on_b_button_down"]
@@ -256,3 +263,4 @@ texture = ExtResource("25_f1203")
 [connection signal="value_changed" from="Accelerator" to="." method="_on_accelerator_value_changed"]
 [connection signal="drag_ended" from="Brake" to="." method="_on_brake_drag_ended"]
 [connection signal="value_changed" from="Brake" to="." method="_on_brake_value_changed"]
+[connection signal="coord" from="VJoy" to="." method="_on_v_joy_coord"]
